@@ -27,7 +27,8 @@
       <div :class="images.classlist.map(element => {
                     return element
                   })">
-        <img :src="images.dir + '/' + images.src[images.selected]" alt="">
+        <img :src="images.dir + '/' + images.src[images.selected]" alt=""
+>
       </div>
       <!-- al click devo diminuire images.selected -->
       <div :class="next.classlist.map(element => {

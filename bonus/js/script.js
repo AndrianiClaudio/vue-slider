@@ -63,3 +63,11 @@ const app = new Vue({
         }
     }
 });
+//aumenta posizione immagine selezionata ogni $time secondi
+function imageTimer(time) {
+    const timer = setInterval(() => {
+        app.selectedMore();
+    }, time*1000);
+    return timer;
+}
+imageTimer(3);
