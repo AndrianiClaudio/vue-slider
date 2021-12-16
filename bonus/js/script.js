@@ -1,3 +1,8 @@
+// Bonus:
+// 1 - al click su uno dei pallini mostrare l’immagine in posizione corrispondente
+// 2 - applicare l’autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente
+// 3 - quando il mouse va in hover sullo slider, bloccare l’autoplay e farlo riprendere quando esce
+
 const app = new Vue({
     el: '#app',
     data: {
@@ -51,6 +56,10 @@ const app = new Vue({
             (this.images.selected >  0) ?
             this.images.selected -= 1
             : this.images.selected = this.images.src.length - 1;
+        },
+        //BONUS
+        changeImage (index) {
+            this.images.selected = index;
         }
     }
 });
