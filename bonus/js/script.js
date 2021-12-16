@@ -6,6 +6,7 @@
 const app = new Vue({
     el: '#app',
     data: {
+        timer: 0,
         slider_wrapper: {
             classlist: ['slider-wrapper'],
         },
@@ -60,14 +61,26 @@ const app = new Vue({
         //BONUS
         changeImage (index) {
             this.images.selected = index;
+        },
+        stopTimer () {
+            // clearInterval(this.timer);
+        },
+        startTimer () {
+            this.timer = setInterval(() => {
+                this.selectedMore();
+            }, 3000);
+            // console.log(this.timer);
         }
-    }
+    },
 });
 //aumenta posizione immagine selezionata ogni $time secondi
-function imageTimer(time) {
-    const timer = setInterval(() => {
+function imageTimer() {
+    id = setInterval(() => {
         app.selectedMore();
-    }, time*1000);
-    return timer;
+    }, 3000);
+    // console.log(app.timer);
+    app.timer = id;
+    // console.log(app.timer);
+    return id;
 }
-imageTimer(3);
+app.timer = imageTimer();
