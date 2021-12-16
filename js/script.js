@@ -36,10 +36,31 @@ const app = new Vue({
                 'image2.jpg',
                 'image3.jpg',
                 'image4.jpg'
-            ]
+            ],
+            selected: 0
         },
         nav: {
             classlist: ['nav']
+        }
+    },
+    methods: {
+        selectedMore () {
+            // console.log('More');
+            // console.log(this.images.selected);
+            //aumento posizione immagine selezionata
+            (this.images.selected < this.images.src.length - 1) ? 
+            this.images.selected += 1
+            : this.images.selected = 0; 
+            // console.log(this.images.selected);
+        },
+        selectedLess () {
+            // console.log('Less');
+            // console.log(this.images.selected);
+            //diminuisco posizione immagine selezionata
+            (this.images.selected >  0) ?
+            this.images.selected -= 1
+            : this.images.selected = this.images.src.length - 1;
+            // console.log(this.images.selected);
         }
     }
 });

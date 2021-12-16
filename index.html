@@ -13,50 +13,34 @@
 
 <body>
   <div id="app" class="container">
-    <!-- <div class="slider-wrapper">
-      <div class="prev">
-        <i class="fas fa-angle-left"></i>
-      </div>
-      <div class="images">
-        <img src="images/image1.jpg" alt="">
-      </div>
-      <div class="next">
-        <i class="fas fa-angle-right"></i>
-      </div>
-      <div class="nav">
-        <i class="fas fa-circle"></i>
-        <i class="fas fa-circle"></i>
-        <i class="fas fa-circle"></i>
-      </div>
-    </div> -->
     <div :class="slider_wrapper.classlist.map(element => {
             return element
           })">
       <div :class="prev.classlist.map(element => {
                     return element
-                  })">
+                  })"
+            @click= 'selectedLess'
+            >
+        <!-- al click devo aumentare images.selected -->
         <i :class='fa_i.angle_left.family + " " + fa_i.angle_left.prefix + fa_i.angle_left.name'></i>
       </div>
       <div :class="images.classlist.map(element => {
                     return element
                   })">
-        <img :src="images.dir + '/' + images.src[0]" alt="">
-        <!-- aggiungere index -->
+        <img :src="images.dir + '/' + images.src[images.selected]" alt="">
       </div>
       <div :class="next.classlist.map(element => {
                     return element
-                  })">
+                  })"
+            @click= 'selectedMore'
+            >
+        <!-- al click devo diminuire images.selected -->
         <i :class="fa_i.angle_right.family + ' ' + fa_i.angle_right.prefix + fa_i.angle_right.name"></i>
       </div>
       <div :class="nav.classlist.map(element => {
                     return element
                   })">
-      <!-- aggiungere index -->
       <i v-for= 'image in images.src' :class = "fa_i.circle.family + ' ' + fa_i.circle.prefix + fa_i.circle.name"></i>
-<!--       
-        <i :class="fa_i.circle.family + ' ' + fa_i.circle.prefix + fa_i.circle.name"></i>
-        <i :class="fa_i.circle.family + ' ' + fa_i.circle.prefix + fa_i.circle.name"></i>
-        <i :class="fa_i.circle.family + ' ' + fa_i.circle.prefix + fa_i.circle.name"></i> -->
       </div>
     </div>
   </div>
