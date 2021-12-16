@@ -36,12 +36,7 @@ const app = new Vue({
         images: {
             classlist: ['images'],
             dir: 'images',
-            src: [
-                'image1.jpg',
-                'image2.jpg',
-                'image3.jpg',
-                'image4.jpg',
-            ],
+            src: [],
             selected: 0
         },
         nav: {
@@ -66,16 +61,18 @@ const app = new Vue({
             clearInterval(this.timer);
         },
         startTimer () {
-            // this.timer = setInterval(() => {
-            //     this.selectedMore();
-            // }, 3000);
             this.timer = setInterval(() => {
                 this.selectedMore();
             }, 3000);
-            // console.log(this.timer);
         }
     },
-    beforeMount() {
-        this.startTimer()
-    },
+    created () {
+        this.images.src = [
+            'image1.jpg',
+            'image2.jpg',
+            'image3.jpg',
+            'image4.jpg',
+        ],
+        this.startTimer();
+    }
 });
