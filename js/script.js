@@ -1,4 +1,3 @@
-// console.log('check');
 const app = new Vue({
     el: '#app',
     data: {
@@ -44,27 +43,14 @@ const app = new Vue({
         }
     },
     methods: {
-        selectedMore () {
-            // console.log('More');
-            // console.log(this.images.selected);
-            //aumento posizione immagine selezionata
-            (this.images.selected < this.images.src.length - 1) ? 
+        selectedMore () { (this.images.selected < this.images.src.length - 1) ? 
             this.images.selected += 1
-            : this.images.selected = 0; 
-            // console.log(this.images.selected);
+            : this.images.selected = 0;
         },
         selectedLess () {
-            // console.log('Less');
-            // console.log(this.images.selected);
-            //diminuisco posizione immagine selezionata
             (this.images.selected >  0) ?
             this.images.selected -= 1
             : this.images.selected = this.images.src.length - 1;
-            // console.log(this.images.selected);
         }
     }
 });
-// app.prev.classlist.map(element => {
-//     element;
-// })
-// console.log(app.fa_i.angle_left.family + app.fa_i.angle_left.prefix + app.fa_i.angle_left.name);

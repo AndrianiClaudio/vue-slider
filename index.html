@@ -16,12 +16,12 @@
     <div :class="slider_wrapper.classlist.map(element => {
             return element
           })">
+      <!-- al click devo aumentare images.selected -->
       <div :class="prev.classlist.map(element => {
                     return element
                   })"
             @click= 'selectedLess'
             >
-        <!-- al click devo aumentare images.selected -->
         <i :class='fa_i.angle_left.family + " " + fa_i.angle_left.prefix + fa_i.angle_left.name'></i>
       </div>
       <div :class="images.classlist.map(element => {
@@ -29,18 +29,21 @@
                   })">
         <img :src="images.dir + '/' + images.src[images.selected]" alt="">
       </div>
+      <!-- al click devo diminuire images.selected -->
       <div :class="next.classlist.map(element => {
                     return element
                   })"
             @click= 'selectedMore'
             >
-        <!-- al click devo diminuire images.selected -->
         <i :class="fa_i.angle_right.family + ' ' + fa_i.angle_right.prefix + fa_i.angle_right.name"></i>
       </div>
-      <div :class="nav.classlist.map(element => {
+      <div :class="nav.classlist.map((element,index) => {
                     return element
-                  })">
-      <i v-for= 'image in images.src' :class = "fa_i.circle.family + ' ' + fa_i.circle.prefix + fa_i.circle.name"></i>
+                  })
+                  ">
+      <i v-for= '(image,index) in images.src' 
+        :class = "((index == images.selected) ? 'active ' : '') +(fa_i.circle.family + ' ' + fa_i.circle.prefix + fa_i.circle.name)"
+        ></i>
       </div>
     </div>
   </div>
