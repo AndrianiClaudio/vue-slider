@@ -4,42 +4,46 @@ const app = new Vue({
     data: {
         slider_wrapper: {
             classlist: ['slider-wrapper'],
-            prev: {
-                classlist: ['prev']
+        },
+        prev: {
+            classlist: ['prev']
+        },
+        next: {
+            classlist: ['next']
+        },
+        fa_i: { //fa = font awesome
+            angle_left: {
+                family: 'fas',
+                prefix: 'fa-',
+                name: 'angle-left'
             },
-            next: {
-                classlist: ['next']
+            angle_right: {
+                family: 'fas',
+                prefix: 'fa-',
+                name: 'angle-right'
             },
-            fa_i: { //fa = font awesome
-                angle_left: {
-                    family: 'fas',
-                    prefix: 'fa-',
-                    name: 'angle_left'
-                },
-                angle_right: {
-                    family: 'fas',
-                    prefix: 'fa-',
-                    name: 'angle_right'
-                },
-                circle: {
-                    family: 'fas',
-                    prefix: 'fa-',
-                    name: 'circle'
-                }
-            },
-            images: {
-                classlist: ['images'],
-                dir: 'images',
-                src: [
-                    'images1.jpg',
-                    'images2.jpg',
-                    'images3.jpg',
-                    'images4.jpg'
-                ]
-            },
-            nav: {
-                classlist: ['nav']
+            circle: {
+                family: 'fas',
+                prefix: 'fa-',
+                name: 'circle'
             }
+        },
+        images: {
+            classlist: ['images'],
+            dir: 'images',
+            src: [
+                'image1.jpg',
+                'image2.jpg',
+                'image3.jpg',
+                'image4.jpg'
+            ]
+        },
+        nav: {
+            classlist: ['nav']
         }
     }
 });
+// app.prev.classlist.map(element => {
+//     element;
+// })
+// console.log(app.fa_i.angle_left.family + app.fa_i.angle_left.prefix + app.fa_i.angle_left.name);
