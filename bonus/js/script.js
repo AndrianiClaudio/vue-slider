@@ -63,24 +63,19 @@ const app = new Vue({
             this.images.selected = index;
         },
         stopTimer () {
-            // clearInterval(this.timer);
+            clearInterval(this.timer);
         },
         startTimer () {
+            // this.timer = setInterval(() => {
+            //     this.selectedMore();
+            // }, 3000);
             this.timer = setInterval(() => {
                 this.selectedMore();
             }, 3000);
             // console.log(this.timer);
         }
     },
+    beforeMount() {
+        this.startTimer()
+    },
 });
-//aumenta posizione immagine selezionata ogni $time secondi
-function imageTimer() {
-    id = setInterval(() => {
-        app.selectedMore();
-    }, 3000);
-    // console.log(app.timer);
-    app.timer = id;
-    // console.log(app.timer);
-    return id;
-}
-app.timer = imageTimer();
